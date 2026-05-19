@@ -254,3 +254,8 @@ At fulfillment time, you'll need access to the personalization details (options 
 
 - **If you stored the full `postMessage` payload** (including `options`, `previewUrl`, and `exportedFiles`), you'll already have everything you need on your ecommerce platform — no extra API calls required.
 - **If you only stored the `personalizationGUID`**, you can retrieve the full personalization details later via the Customily API. See [Retrieving Personalization Details & Production Files](FULFILLMENT_GUIDE.md) for details.
+
+You may also want to explore these advanced integration options:
+
+- **Using your own "Add to Cart" button** — If you prefer to handle the add-to-cart flow yourself instead of using Customily's built-in button, you can call the same endpoints directly. See [Custom Add to Cart Integration](CUSTOM_ADD_TO_CART.md) for details.
+- **Embedding just the option set form** — If you want to integrate the live preview directly into your product page and use the iframe only for the option set form, see [Options-Only Mode Integration](OPTIONS_ONLY_MODE.md) for details.
