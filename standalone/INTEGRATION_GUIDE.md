@@ -209,3 +209,7 @@ window.addEventListener('message', (event) => {
 ```
 
 ---
+
+## What's Next
+
+Once the shopper's personalization is stored in your cart, you'll need to retrieve the personalization details and production file at fulfillment time. See [Retrieving Personalization Details & Production Files](FULFILLMENT_GUIDE.md) for how to use the `personalizationGUID` to access the shopper's selections and download the production-ready file.
