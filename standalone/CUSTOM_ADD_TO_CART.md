@@ -57,7 +57,7 @@ const preview = await window.engraver.generatePreviewImage({
 - **`thumbnailUrl`** — a smaller image, more suitable for use as the cart thumbnail.
 
 ## Step 3: Create the Cart Record on Customily server
-This creates a record in [Customily's order dashboard](https://help.customily.com/articles/7888376979-viewing-orders-in-customily)
+This just creates a record in [Customily's order dashboard](https://help.customily.com/articles/7888376979-viewing-orders-in-customily)
 
 Post the personalization data to Customily's cart endpoint:
 
