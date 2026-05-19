@@ -39,9 +39,6 @@ Call `generatePreviewImage()` to upload a preview and get a CDN URL:
 
 ```javascript
 const preview = await window.engraver.generatePreviewImage({
-    width: 1000,
-    height: 1000,
-    quality: 100,
     shop: 'yourstandalonestore.com'
 });
 ```
@@ -56,7 +53,8 @@ const preview = await window.engraver.generatePreviewImage({
 }
 ```
 
-Use `previewUrl` as the cart thumbnail image.
+- **`previewUrl`** — a 1000x1000 high-quality image, ideal for sending to the shopper via email so they can see how their personalization looks.
+- **`thumbnailUrl`** — a smaller image, more suitable for use as the cart thumbnail.
 
 ## Step 3: Create the Cart Record
 
@@ -90,12 +88,7 @@ async function customilyAddToCart(shop, quantity) {
     const exportedFiles = await window.engraver.generatePFRPostOrder('');
 
     // 2. Generate preview thumbnail
-    const preview = await window.engraver.generatePreviewImage({
-        width: 1000,
-        height: 1000,
-        quality: 100,
-        shop: shop
-    });
+    const preview = await window.engraver.generatePreviewImage({ shop });
 
     // 3. Wait for any pending file uploads (images, vectors) to complete
     await window.engraver.waitFilesUpload();
