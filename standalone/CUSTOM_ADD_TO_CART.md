@@ -42,7 +42,7 @@ const preview = await window.engraver.generatePreviewImage({
     width: 1000,
     height: 1000,
     quality: 100,
-    shop: 'yourstandalonestore'
+    shop: 'yourstandalonestore.com'
 });
 ```
 
@@ -51,7 +51,7 @@ const preview = await window.engraver.generatePreviewImage({
 ```javascript
 {
     "filename": "c611faa2-...",
-    "previewUrl": "https://cdn.customily.com/shopify/assetFiles/previews/yourstandalonestore/c611faa2-....jpeg",
+    "previewUrl": "https://cdn.customily.com/shopify/assetFiles/previews/yourstandalonestore.com/c611faa2-....jpeg",
     "thumbnailUrl": "https://cdn.customily.com/..."
 }
 ```
@@ -63,7 +63,7 @@ Use `previewUrl` as the cart thumbnail image.
 Post the personalization data to Customily's cart endpoint:
 
 ```javascript
-const response = await fetch('https://sh.customily.com/api/standalone/cart?shop=yourstandalonestore', {
+const response = await fetch('https://sh.customily.com/api/standalone/cart?shop=yourstandalonestore.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -125,7 +125,7 @@ async function customilyAddToCart(shop, quantity) {
 
 // Usage
 document.getElementById('my-add-to-cart-btn').addEventListener('click', async () => {
-    const result = await customilyAddToCart('yourstandalonestore', 1);
+    const result = await customilyAddToCart('yourstandalonestore.com', 1);
     console.log('Added to cart:', result.personalizationGUID);
     console.log('Preview:', result.previewUrl);
 
