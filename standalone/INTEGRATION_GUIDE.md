@@ -209,12 +209,3 @@ window.addEventListener('message', (event) => {
 ```
 
 ---
-
-## 4. API Reference Summary
-
-| Step                  | Method | Endpoint                                                      | Purpose                           |
-| --------------------- | ------ | ------------------------------------------------------------- | --------------------------------- |
-| Generate PF link      | POST   | `app.customily.com/api/EPSEngrave/GeneratePFRPostOrder`       | Create production file request    |
-| Upload preview image  | POST   | `sh-api.customily.com/api/images/preview/save`                | Upload preview, get CDN URL       |
-| Create cart record    | POST   | `sh.customily.com/api/standalone/cart?shop={store}`           | Save personalization, get cart ID |
-| Retrieve cart item    | GET    | `sh.customily.com/api/standalone/order?search={id}`           | Look up personalization by ID     |
