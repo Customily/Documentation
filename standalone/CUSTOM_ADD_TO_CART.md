@@ -4,7 +4,7 @@ This guide explains how to use your own "Add to Cart" button instead of Customil
 
 ## Overview
 
-When using Customily's built-in "Add to Cart" button, the iframe automatically calls three operations and sends the result to the parent page via `postMessage`. If you want to use your own button, you'll need to hide  Customily's one and call these same operations yourself using JavaScript functions exposed by the Customily engraver window object.
+When using Customily's built-in "Add to Cart" button, the iframe automatically calls three operations and sends the result to the parent page via `postMessage`. If you want to use your own button and keep this functionality, you'll need to hide Customily's one and call these same operations yourself using JavaScript functions exposed by the Customily engraver window object.
 
 The three operations are:
 
@@ -31,7 +31,7 @@ const productionFileUrls = exportedFiles.map(f => f.url);
 ]
 ```
 
-> Note: The `url` is a placeholder — the actual file won't be available until you call the [item/generate endpoint](INTEGRATION_GUIDE.md#23-generating-the-production-file) after checkout.
+> Note: The `url` is a placeholder — the actual file won't be available until you call the [item/generate endpoint](https://github.com/Customily/Documentation/blob/main/standalone/INTEGRATION_GUIDE.md#23-generating-the-production-file) after checkout.
 
 ## Step 2: Generate the Preview Thumbnail
 
@@ -56,7 +56,7 @@ const preview = await window.engraver.generatePreviewImage({
 - **`previewUrl`** — a 1000x1000 high-quality image, ideal for sending to the shopper via email so they can see how their personalization looks.
 - **`thumbnailUrl`** — a smaller image, more suitable for use as the cart thumbnail.
 
-## Step 3: Create the Cart Record
+## Step 3: Create the Cart Record on Customily server
 
 Post the personalization data to Customily's cart endpoint:
 
