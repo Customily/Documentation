@@ -153,6 +153,5 @@ The following `window.engraver` methods and properties are relevant to the add-t
 | `generatePFRPostOrder('')` | `Promise<[{ url }]>` | Generates the production file request (one entry per template side) |
 | `generatePreviewImage(options)` | `Promise<{ previewUrl, thumbnailUrl, filename }>` | Uploads preview image, returns CDN URLs |
 | `waitFilesUpload()` | `Promise<void>` | Waits for pending image/vector uploads to complete |
-| `getElementsUrls(type, id)` | `string[]` | Gets Customily-hosted URLs for uploaded images (`'image'`) or vectors (`'vector'`) by element ID |
-| `getSessionId()` | `string` | Returns the current engraver session ID (used internally by Customily for tracking) |
-| `currentProduct.id` | `string` | The current template/product ID |
+| `getElementsUrls(type, id)` | `string[]` | Gets Customily-hosted URLs for shopper uploaded images (`'image'`) or vectors (`'vector'`) by template [element ID](https://help.customily.com/articles/9397457321-what-s-the-elements-id) |
+| `currentProduct.id` | `string` | The current [template ID](https://help.customily.com/articles/6618266271-what-is-a-template) |
