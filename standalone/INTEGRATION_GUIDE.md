@@ -91,6 +91,70 @@ window.addEventListener('message', (event) => {
 
 > **Pro tip:** Adding the `previewUrl` as the cart item thumbnail is a great practice that helps the shopper making sure that what they personalized is exactly what they added to the cart
 
+### 2.3 Generating the Production File
+
+To generate the production-ready file for fulfillment, call the `/standalone/item/generate` endpoint with the production file URL (from the `exportedFiles` array in the `postMessage` payload) and a JWT token for authentication:
+
+```
+POST https://sh.customily.com/api/standalone/item/generate
+Authorization: Bearer <JWT_TOKEN>
+```
+
+**Request body:**
+
+```json
+{
+    "url": "https://cdn.customily.com/...",
+    "shop": "standalone.customily.com",
+    "order": ""
+}
+```
+
+| Field   | Type   | Required | Description                                                        |
+| ------- | ------ | -------- | ------------------------------------------------------------------ |
+| `url`   | string | Yes      | The production file URL from `exportedFiles[].url`                 |
+| `shop`  | string | Yes      | Your store identifier                                              |
+| `order` | string | No       | Optional order reference from your platform                        |
+
+**Response:** `200 OK` — `"File generated successfully"`
+
+> Note: The `url` must be hosted on a `*.customily.com` domain.
+
+#### Obtaining the JWT Token
+
+To obtain a JWT token, call the Customily token endpoint with your username and password:
+
+```
+POST https://app.customily.com/api/token
+Content-Type: application/x-www-form-urlencoded
+```
+
+**Request body:**
+
+```
+grant_type=password&username=YOUR_USERNAME&password=YOUR_PASSWORD
+```
+
+**Response:**
+
+```json
+{
+    "access_token": "eyJhbGciOi...",
+    "token_type": "Bearer",
+    "expires_in": 2592000
+}
+```
+
+The `access_token` is the JWT token to use in the `Authorization` header.
+
+**Example using cURL:**
+
+```bash
+curl -X POST "https://app.customily.com/api/token" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=password&username=YOUR_USERNAME&password=YOUR_PASSWORD"
+```
+
 ## 3. Complete Example
 
 ```html
