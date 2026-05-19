@@ -95,7 +95,11 @@ async function customilyAddToCart(shop, quantity, options) {
     // 2. Generate preview thumbnail
     const preview = await window.engraver.generatePreviewImage({ shop });
 
-    // 3. Wait for any pending file uploads (images, vectors) to complete
+    // 3. Wait for any pending file uploads to complete.
+    // When a shopper uploads an image or vector, Customily immediately starts uploading
+    // the file in the background. For large files, it's possible the shopper clicks
+    // "Add to Cart" before the upload finishes. Calling waitFilesUpload() ensures all
+    // pending uploads are complete before proceeding, so no files are missing from the order.
     await window.engraver.waitFilesUpload();
 
     // 4. Create cart record
@@ -141,13 +145,13 @@ document.getElementById('my-add-to-cart-btn').addEventListener('click', async ()
 
 ## JavaScript API Reference
 
-These methods are available on `window.engraver`:
+The following `window.engraver` methods and properties are relevant to the add-to-cart flow:
 
 | Method | Returns | Description |
 | ------ | ------- | ----------- |
 | `generatePFRPostOrder('')` | `Promise<[{ url }]>` | Generates the production file request (one entry per template side) |
 | `generatePreviewImage(options)` | `Promise<{ previewUrl, thumbnailUrl, filename }>` | Uploads preview image, returns CDN URLs |
-| `getSessionId()` | `string` | Returns the current engraver session ID |
 | `waitFilesUpload()` | `Promise<void>` | Waits for pending image/vector uploads to complete |
-| `getElementsUrls(type, id)` | `string[]` | Gets URLs for uploaded images (`'image'`) or vectors (`'vector'`) |
+| `getElementsUrls(type, id)` | `string[]` | Gets Customily-hosted URLs for uploaded images (`'image'`) or vectors (`'vector'`) by element ID |
+| `getSessionId()` | `string` | Returns the current engraver session ID (used internally by Customily for tracking) |
 | `currentProduct.id` | `string` | The current template/product ID |
