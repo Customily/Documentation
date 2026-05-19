@@ -257,5 +257,5 @@ At fulfillment time, you'll need access to the personalization details (options 
 
 You may also want to explore these advanced integration options:
 
-- **Using your own "Add to Cart" button** — If you prefer to handle the add-to-cart flow yourself instead of using Customily's built-in button, you can call the same endpoints directly. See [Custom Add to Cart Integration](CUSTOM_ADD_TO_CART.md) for details.
+- **Using your own "Add to Cart" button** — If you prefer to handle the add-to-cart flow yourself instead of using Customily's built-in button see [Custom Add to Cart Integration](CUSTOM_ADD_TO_CART.md) for details.
 - **Embedding just the option set form** — If you want to integrate the live preview directly into your product page and use the iframe only for the option set form, see [Options-Only Mode Integration](OPTIONS_ONLY_MODE.md) for details.
