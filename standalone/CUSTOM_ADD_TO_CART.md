@@ -4,13 +4,13 @@ This guide explains how to use your own "Add to Cart" button instead of Customil
 
 ## Overview
 
-When using Customily's built-in "Add to Cart" button, the iframe automatically calls three operations and sends the result to the parent page via `postMessage`. If you want to use your own button and keep this functionality, you'll need to hide Customily's one and call these same operations yourself using JavaScript functions exposed by the Customily engraver window object.
+When using Customily's built-in "Add to Cart" button, the iframe automatically calls three operations and sends the result to the parent page via `postMessage`. If you want to use your own button you'll need to hide Customily's button and call at least the Production file generation request yourself exposed by the Customily engraver window object.
 
 The three operations are:
 
-1. **Generate the production file request** — reserves a URL for the production-ready file
-2. **Generate a preview thumbnail** — uploads a preview image and returns a CDN URL
-3. **Create a cart record** — saves the personalization data on Customily's server so you can see the cart details on Customily's dashboard
+1. **Generate the production file request** — reserves a URL for the production-ready file 
+2. **Generate a preview thumbnail (optional)** — uploads a preview image and returns a CDN URL  
+3. **Create a cart record (optional)** — saves the personalization data on Customily's server so you can see the cart details on Customily's dashboard 
 
 ## Step 1: Generate the Production File Request
 
@@ -57,6 +57,7 @@ const preview = await window.engraver.generatePreviewImage({
 - **`thumbnailUrl`** — a smaller image, more suitable for use as the cart thumbnail.
 
 ## Step 3: Create the Cart Record on Customily server
+This just creates a record in [Customily's order dashboard](https://help.customily.com/articles/7888376979-viewing-orders-in-customily)
 
 Post the personalization data to Customily's cart endpoint:
 
@@ -152,6 +153,5 @@ The following `window.engraver` methods and properties are relevant to the add-t
 | `generatePFRPostOrder('')` | `Promise<[{ url }]>` | Generates the production file request (one entry per template side) |
 | `generatePreviewImage(options)` | `Promise<{ previewUrl, thumbnailUrl, filename }>` | Uploads preview image, returns CDN URLs |
 | `waitFilesUpload()` | `Promise<void>` | Waits for pending image/vector uploads to complete |
-| `getElementsUrls(type, id)` | `string[]` | Gets Customily-hosted URLs for uploaded images (`'image'`) or vectors (`'vector'`) by element ID |
-| `getSessionId()` | `string` | Returns the current engraver session ID (used internally by Customily for tracking) |
-| `currentProduct.id` | `string` | The current template/product ID |
+| `getElementsUrls(type, id)` | `string[]` | Gets Customily-hosted URLs for shopper uploaded images (`'image'`) or vectors (`'vector'`) by template [element ID](https://help.customily.com/articles/9397457321-what-s-the-elements-id) |
+| `currentProduct.id` | `string` | The current [template ID](https://help.customily.com/articles/6618266271-what-is-a-template) |
