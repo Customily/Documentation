@@ -93,7 +93,11 @@ window.addEventListener('message', (event) => {
 
 ### 2.3 Generating the Production File
 
-The URLs in the `exportedFiles` array from the `postMessage` payload are **placeholders** — the actual production file won't be available at those URLs until you explicitly trigger generation. This is by design: since Customily charges per production file generated and there's no way to know whether a shopper will actually complete checkout, production files are only created on demand to avoid unnecessary costs for items that are added to the cart but never purchased.
+The URLs in the `exportedFiles` array from the `postMessage` payload are **placeholders** — the actual production file won't be available at those URLs until you explicitly trigger generation. If you try to open the URL before calling the generate endpoint, you'll see this:
+
+![Production file not found](images/production-file-not-found.png)
+
+This is by design: since Customily charges per production file generated and there's no way to know whether a shopper will actually complete checkout, production files are only created on demand to avoid unnecessary costs for items that are added to the cart but never purchased.
 
 You should call this endpoint **after the shopper has checked out** (i.e., after payment is confirmed), not when the item is added to the cart.
 
