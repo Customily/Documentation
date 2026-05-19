@@ -137,13 +137,26 @@ window.addEventListener('message', (event) => {
             cursor: pointer;
             font-size: 16px;
         }
+        #customize-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        #customize-btn:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
 
     <!-- Product Page -->
-    <h1>Personalized Necklace</h1>
-    <img src="https://raw.githubusercontent.com/Customily/Documentation/main/standalone/images/product-image.png" id="product-image" />
+    <h1>Personalized Heart Map Canvas</h1>
+    <p>Celebrate a special place with a custom heart-shaped map canvas. Choose your location, add your names and a meaningful date — the perfect gift for anniversaries, weddings, or any occasion worth remembering.</p>
+    <img src="https://raw.githubusercontent.com/Customily/Documentation/main/standalone/images/product-image.png" id="product-image" style="display: block; margin-bottom: 16px;" />
     <button id="customize-btn">Customize</button>
 
     <!-- Customily Modal -->
