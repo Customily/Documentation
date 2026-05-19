@@ -6,7 +6,7 @@ This guide explains how to retrieve the personalization details for an order ite
 
 If you stored the full `postMessage` payload (including `options`, `previewUrl`, and `exportedFiles`) when the shopper added the item to the cart, you already have everything you need — no API call required.
 
-However, if you only stored the `personalizationGUID`, you can retrieve the full personalization details at any time via the Customily API. Even if you stored nothing at all, you can still retrieve the personalization details by order ID — as long as you included your e-commerce platform's order ID in the [`/standalone/cart` POST](CUSTOM_ADD_TO_CART.md#step-3-create-the-cart-record-on-customily-server).
+However, if you only stored the `personalizationGUID`, you can retrieve the full personalization details at any time via the Customily API. Even if you stored nothing at all, you can still retrieve the personalization details by order ID — as long as you included your e-commerce platform's order ID in the [`/standalone/cart`](CUSTOM_ADD_TO_CART.md#step-3-create-the-cart-record-on-customily-server) call.
 
 ## Retrieving Personalization Details
 
@@ -75,10 +75,3 @@ curl -X GET "https://sh.customily.com/api/standalone/item?orderId=12345" \
 ## Authentication
 
 These endpoints require a JWT token in the `Authorization` header. See [Authentication](../AUTHENTICATION.md) for how to obtain one.
-
-## Typical Fulfillment Flow
-
-1. **Order is placed** — your platform confirms payment
-2. **Generate the production file** — call [`POST /standalone/item/generate`](INTEGRATION_GUIDE.md#23-generating-the-production-file) with the production file URL
-3. **Retrieve personalization details** — call `GET /standalone/item/{personalizationGUID}` to get the options, preview image, and production file URL
-4. **Fulfill the order** — download the production file and use it for printing/manufacturing
