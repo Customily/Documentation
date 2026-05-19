@@ -95,7 +95,7 @@ window.addEventListener('message', (event) => {
 
 The URLs in the `exportedFiles` array from the `postMessage` payload are **placeholders** — the actual production file won't be available at those URLs until you explicitly trigger generation. If you try to open the URL before calling the generate endpoint, you'll see this:
 
-![Production file not found](images/production-file-not-found.png)
+<img src="images/production-file-not-found.png" alt="Production file not found" width="50%">
 
 This is by design: since Customily charges per production file generated and there's no way to know whether a shopper will actually complete checkout, production files are only created on demand to avoid unnecessary costs for items that are added to the cart but never purchased.
 
