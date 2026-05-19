@@ -10,7 +10,7 @@ The three operations are:
 
 1. **Generate the production file request** — reserves a URL for the production-ready file
 2. **Generate a preview thumbnail** — uploads a preview image and returns a CDN URL
-3. **Create a cart record** — saves the personalization data on Customily's server
+3. **Create a cart record** — saves the personalization data on Customily's server so you can see the cart details on Customily's dashboard
 
 ## Step 1: Generate the Production File Request
 
@@ -70,7 +70,12 @@ const response = await fetch('https://sh.customily.com/api/standalone/cart?shop=
         sessionId: window.engraver.getSessionId(),
         previewUrl: preview.previewUrl,
         exportedFiles: exportedFiles,
-        options: []    // see note below
+        options: [
+            { name: "Name", value: "John", type: "Text Input" },
+            { name: "Date", value: "June 15, 2025", type: "Text Input" },
+            { name: "Font", value: "Script", type: "Dropdown" },
+            { name: "Photo", value: window.engraver.getElementsUrls('image', 1)[0], type: "Image Upload" }
+        ]
     })
 });
 
@@ -78,12 +83,12 @@ const cartItem = await response.json();
 // cartItem.id is the personalizationGUID
 ```
 
-> Note: The `options` array is used to store the shopper's selections (e.g. `[{ name: "Name", value: "John", type: "Text Input" }]`). If you don't need to retrieve them later, you can pass an empty array. However, if you need to display or reference what the shopper entered at fulfillment time, populate this array with the relevant option data.
+The `options` array stores the shopper's selections so you can see what they entered on Customily's dashboard and at fulfillment time. Populate it with the options from your form — each entry should have a `name`, `value`, and `type`.
 
 ## Complete Example
 
 ```javascript
-async function customilyAddToCart(shop, quantity) {
+async function customilyAddToCart(shop, quantity, options) {
     // 1. Generate production file request
     const exportedFiles = await window.engraver.generatePFRPostOrder('');
 
@@ -103,7 +108,7 @@ async function customilyAddToCart(shop, quantity) {
             sessionId: window.engraver.getSessionId(),
             previewUrl: preview.previewUrl,
             exportedFiles: exportedFiles,
-            options: []
+            options: options
         })
     });
 
@@ -118,7 +123,15 @@ async function customilyAddToCart(shop, quantity) {
 
 // Usage
 document.getElementById('my-add-to-cart-btn').addEventListener('click', async () => {
-    const result = await customilyAddToCart('yourstandalonestore.com', 1);
+    // Collect the shopper's selections from your form
+    const options = [
+        { name: "Name", value: document.getElementById('name-input').value, type: "Text Input" },
+        { name: "Date", value: document.getElementById('date-input').value, type: "Text Input" },
+        { name: "Font", value: document.getElementById('font-select').value, type: "Dropdown" },
+        { name: "Photo", value: window.engraver.getElementsUrls('image', 1)[0], type: "Image Upload" }
+    ];
+
+    const result = await customilyAddToCart('yourstandalonestore.com', 1, options);
     console.log('Added to cart:', result.personalizationGUID);
     console.log('Preview:', result.previewUrl);
 
