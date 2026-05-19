@@ -56,7 +56,7 @@ const preview = await window.engraver.generatePreviewImage({
 - **`previewUrl`** — a 1000x1000 high-quality image, ideal for sending to the shopper via email so they can see how their personalization looks.
 - **`thumbnailUrl`** — a smaller image, more suitable for use as the cart thumbnail.
 
-## Step 3: Create the Cart Record
+## Step 3: Create the Cart Record on Customily server
 
 Post the personalization data to Customily's cart endpoint:
 
