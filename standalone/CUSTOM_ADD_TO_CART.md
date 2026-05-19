@@ -86,7 +86,7 @@ const cartItem = await response.json();
 ```
 
 - The `options` array stores the shopper's selections so you can see what they entered on Customily's dashboard and at fulfillment time. Populate it with the options from your form — each entry should have a `name`, `value`, and `type`.
-- The `orderId` is optional — if provided, you can later [retrieve all personalization items for that order](FULFILLMENT_GUIDE.md) using this ID.
+- The `orderId` is optional — if provided, you can later [retrieve all personalization items for that order](FETCH_PERSONALIZATION.md) using this ID.
 
 ## Complete Example
 

@@ -253,7 +253,7 @@ See [Authentication](../AUTHENTICATION.md) for how to obtain the JWT token.
 At fulfillment time, you'll need access to the personalization details (options the shopper selected, preview image, production file). How much work this requires depends on what you stored in your cart:
 
 - **If you stored the full `postMessage` payload** (including `options`, `previewUrl`, and `exportedFiles`), you'll already have everything you need on your ecommerce platform — no extra API calls required.
-- **If you only stored the `personalizationGUID`**, you can retrieve the full personalization details later via the Customily API. See [Retrieving Personalization Details & Production Files](FULFILLMENT_GUIDE.md) for details.
+- **If you only stored the `personalizationGUID`**, you can retrieve the full personalization details later via the Customily API. See [Retrieving Personalization Details & Production Files](FETCH_PERSONALIZATION.md) for details.
 
 You may also want to explore these advanced integration options:
 
