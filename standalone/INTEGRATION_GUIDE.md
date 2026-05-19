@@ -123,40 +123,7 @@ Authorization: Bearer <JWT_TOKEN>
 
 > Note: The `url` must be hosted on a `*.customily.com` domain.
 
-#### Obtaining the JWT Token
-
-To obtain a JWT token, call the Customily token endpoint with your username and password:
-
-```
-POST https://app.customily.com/api/token
-Content-Type: application/x-www-form-urlencoded
-```
-
-**Request body:**
-
-```
-grant_type=password&username=YOUR_USERNAME&password=YOUR_PASSWORD
-```
-
-**Response:**
-
-```json
-{
-    "access_token": "eyJhbGciOi...",
-    "token_type": "Bearer",
-    "expires_in": 2592000
-}
-```
-
-The `access_token` is the JWT token to use in the `Authorization` header.
-
-**Example using cURL:**
-
-```bash
-curl -X POST "https://app.customily.com/api/token" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "grant_type=password&username=YOUR_USERNAME&password=YOUR_PASSWORD"
-```
+See [Authentication](../AUTHENTICATION.md) for how to obtain the JWT token.
 
 ## 3. Complete Example
 
