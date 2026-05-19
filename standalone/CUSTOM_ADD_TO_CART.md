@@ -31,7 +31,7 @@ const productionFileUrls = exportedFiles.map(f => f.url);
 ]
 ```
 
-> Note: The `url` is a placeholder — the actual file won't be available until you call the [item/generate endpoint]([INTEGRATION_GUIDE.md#23-generating-the-production-file](https://github.com/Customily/Documentation/blob/main/standalone/INTEGRATION_GUIDE.md#23-generating-the-production-file)) after checkout.
+> Note: The `url` is a placeholder — the actual file won't be available until you call the [item/generate endpoint](https://github.com/Customily/Documentation/blob/main/standalone/INTEGRATION_GUIDE.md#23-generating-the-production-file) after checkout.
 
 ## Step 2: Generate the Preview Thumbnail
 
