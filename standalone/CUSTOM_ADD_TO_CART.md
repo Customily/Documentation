@@ -17,14 +17,8 @@ The three operations are:
 Call `generatePFRPostOrder()` on the engraver to create the production file request:
 
 ```javascript
-const exportedFiles = await window.engraver.generatePFRPostOrder('', false, 'YOUR_STORE.customily.com');
+const exportedFiles = await window.engraver.generatePFRPostOrder('');
 ```
-
-| Parameter     | Type    | Description                                      |
-| ------------- | ------- | ------------------------------------------------ |
-| `fileName`    | string  | Optional filename (can be empty)                 |
-| `forceNotify` | boolean | Set to `false`                                   |
-| `shop`        | string  | Your store identifier                            |
 
 **Returns:** `ExportedFile[]`
 
@@ -94,7 +88,7 @@ const cartItem = await response.json();
 ```javascript
 async function customilyAddToCart(shop, quantity) {
     // 1. Generate production file request
-    const exportedFiles = await window.engraver.generatePFRPostOrder('', false, shop);
+    const exportedFiles = await window.engraver.generatePFRPostOrder('');
 
     // 2. Generate preview thumbnail
     const preview = await window.engraver.generatePreviewImage({
