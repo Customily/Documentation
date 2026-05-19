@@ -76,7 +76,7 @@ window.addEventListener('message', (event) => {
     console.log('Preview image:', data.previewUrl);
     console.log('Options:', data.options);
 
-    // Add the item to your platform's cart. You'll need to pass at least the personalizationId
+    // Add the item to your platform's cart. You'll need to pass at least the personalizationGUID
     addItemToYourCart({
         productId: 'your-platform-product-id',
         personalizationId: data.personalizationGUID,
