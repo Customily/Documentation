@@ -212,4 +212,7 @@ window.addEventListener('message', (event) => {
 
 ## What's Next
 
-Once the shopper's personalization is stored in your cart, you'll need to retrieve the personalization details and production file at fulfillment time. See [Retrieving Personalization Details & Production Files](FULFILLMENT_GUIDE.md) for how to use the `personalizationGUID` to access the shopper's selections and download the production-ready file.
+At fulfillment time, you'll need access to the personalization details (options the shopper selected, preview image, production file). How much work this requires depends on what you stored in your cart:
+
+- **If you stored the full `postMessage` payload** (including `options`, `previewUrl`, and `exportedFiles`), you already have everything you need — no extra API calls required.
+- **If you only stored the `personalizationGUID`**, you can retrieve the full personalization details later via the Customily API. See [Retrieving Personalization Details & Production Files](FULFILLMENT_GUIDE.md) for details.
