@@ -87,7 +87,7 @@ window.addEventListener('message', (event) => {
 });
 ```
 
-> **Pro tip:** You can add more attributes to your cart item such as `exportedFiles`, `options`, etc. But make sure you hide them from the shopper as it may be confusing for them to see all that info in their cart.
+> **Pro tip:** You can add more attributes to your cart item such as `exportedFiles`, `options`, etc. This may save you an [API call](#whats-next) later. But make sure you hide them from the shopper as it may be confusing for them to see all that info in their cart.
 
 > **Pro tip:** Adding the `previewUrl` as the cart item thumbnail is a great practice that helps the shopper making sure that what they personalized is exactly what they added to the cart
 
