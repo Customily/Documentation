@@ -18,17 +18,16 @@ Call `generatePFRPostOrder()` on the engraver to create the production file requ
 
 ```javascript
 const exportedFiles = await window.engraver.generatePFRPostOrder('');
+// Store the url(s) — you'll need them to call item/generate after checkout
+const productionFileUrls = exportedFiles.map(f => f.url);
 ```
 
-**Returns:** `ExportedFile[]`
+**Returns:** an array of production file URLs (one per template side):
 
 ```javascript
 [
-    {
-        "url": "https://cdn.customily.com/ExportFile/...",
-        "personalizationId": "abc-123-...",
-        "epsId": "456"
-    }
+    { "url": "https://cdn.customily.com/ExportFile/..." },
+    { "url": "https://cdn.customily.com/ExportFile/..." }  // if the template has multiple sides
 ]
 ```
 
@@ -140,7 +139,7 @@ These methods are available on `window.engraver`:
 
 | Method | Returns | Description |
 | ------ | ------- | ----------- |
-| `generatePFRPostOrder(fileName, forceNotify, shop)` | `Promise<ExportedFile[]>` | Generates the production file request |
+| `generatePFRPostOrder('')` | `Promise<[{ url }]>` | Generates the production file request (one entry per template side) |
 | `generatePreviewImage(options)` | `Promise<{ previewUrl, thumbnailUrl, filename }>` | Uploads preview image, returns CDN URLs |
 | `getSessionId()` | `string` | Returns the current engraver session ID |
 | `waitFilesUpload()` | `Promise<void>` | Waits for pending image/vector uploads to complete |
