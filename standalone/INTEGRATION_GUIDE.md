@@ -259,4 +259,4 @@ You may also want to explore these advanced integration options:
 
 - **Using your own "Add to Cart" button** — If you prefer to handle the add-to-cart flow yourself instead of using Customily's built-in button see [Custom Add to Cart Integration](CUSTOM_ADD_TO_CART.md) for details.
 - **Embedding just the option set form** — If you want to integrate the live preview directly into your product page and use the iframe only for the option set form, see [Options-Only Mode Integration](OPTIONS_ONLY_MODE.md) for details.
-- **Customizing the iframe appearance** — If you want to match the look and feel of the Customily iframe to your store's branding, see [Styling the Iframe](STYLING.md) for how to change colors, fonts, layout, and button styles.
+- **Customizing the iframe appearance** — If you want to match the look and feel of the Customily iframe to your store's branding, see [Change Options Styles with CSS](https://help.customily.com/articles/1153468106-change-options-styles-with-css?lang=en) for how to change colors, fonts, layout, and button styles.
