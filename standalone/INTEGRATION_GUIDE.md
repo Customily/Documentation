@@ -108,7 +108,7 @@ Authorization: Bearer <JWT_TOKEN>
 
 ```json
 {
-    "url": "https://cdn.customily.com/...",
+    "url": "https://cdn.customily.com/ExportFile/customilyUser/330afd39-6ef1-4b9c-8893-6ef2033d4791.png",
     "shop": "standalone.customily.com"
 }
 ```
