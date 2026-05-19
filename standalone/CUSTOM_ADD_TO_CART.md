@@ -68,6 +68,7 @@ const response = await fetch('https://sh.customily.com/api/standalone/cart?shop=
     body: JSON.stringify({
         productId: window.engraver.currentProduct.id,
         quantity: 1,
+        orderId: '10001',  // your platform's order ID (optional)
         sessionId: window.engraver.getSessionId(),
         previewUrl: preview.previewUrl,
         exportedFiles: exportedFiles,
@@ -84,12 +85,13 @@ const cartItem = await response.json();
 // cartItem.id is the personalizationGUID
 ```
 
-The `options` array stores the shopper's selections so you can see what they entered on Customily's dashboard and at fulfillment time. Populate it with the options from your form — each entry should have a `name`, `value`, and `type`.
+- The `options` array stores the shopper's selections so you can see what they entered on Customily's dashboard and at fulfillment time. Populate it with the options from your form — each entry should have a `name`, `value`, and `type`.
+- The `orderId` is optional — if provided, you can later [retrieve all personalization items for that order](FULFILLMENT_GUIDE.md) using this ID.
 
 ## Complete Example
 
 ```javascript
-async function customilyAddToCart(shop, quantity, options) {
+async function customilyAddToCart(shop, quantity, options, orderId) {
     // 1. Generate production file request
     const exportedFiles = await window.engraver.generatePFRPostOrder('');
 
@@ -110,6 +112,7 @@ async function customilyAddToCart(shop, quantity, options) {
         body: JSON.stringify({
             productId: window.engraver.currentProduct.id,
             quantity: quantity,
+            orderId: orderId,
             sessionId: window.engraver.getSessionId(),
             previewUrl: preview.previewUrl,
             exportedFiles: exportedFiles,
@@ -136,7 +139,7 @@ document.getElementById('my-add-to-cart-btn').addEventListener('click', async ()
         { name: "Photo", value: window.engraver.getElementsUrls('image', 1)[0], type: "Image Upload" }
     ];
 
-    const result = await customilyAddToCart('yourstandalonestore.com', 1, options);
+    const result = await customilyAddToCart('yourstandalonestore.com', 1, options, '10001');
     console.log('Added to cart:', result.personalizationGUID);
     console.log('Preview:', result.previewUrl);
 
