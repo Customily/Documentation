@@ -93,7 +93,11 @@ window.addEventListener('message', (event) => {
 
 ### 2.3 Generating the Production File
 
-To generate the production-ready file for fulfillment, call the `/standalone/item/generate` endpoint with the production file URL (from the `exportedFiles` array in the `postMessage` payload) and a JWT token for authentication:
+The URLs in the `exportedFiles` array from the `postMessage` payload are **placeholders** — the actual production file won't be available at those URLs until you explicitly trigger generation. This is by design: since Customily charges per production file generated and there's no way to know whether a shopper will actually complete checkout, production files are only created on demand to avoid unnecessary costs for items that are added to the cart but never purchased.
+
+You should call this endpoint **after the shopper has checked out** (i.e., after payment is confirmed), not when the item is added to the cart.
+
+Call the `/standalone/item/generate` endpoint with the production file URL and a JWT token for authentication:
 
 ```
 POST https://sh.customily.com/api/standalone/item/generate
@@ -105,8 +109,7 @@ Authorization: Bearer <JWT_TOKEN>
 ```json
 {
     "url": "https://cdn.customily.com/...",
-    "shop": "standalone.customily.com",
-    "order": ""
+    "shop": "standalone.customily.com"
 }
 ```
 
