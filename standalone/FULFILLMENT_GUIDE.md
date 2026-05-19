@@ -6,7 +6,7 @@ This guide explains how to retrieve the personalization details for an order ite
 
 If you stored the full `postMessage` payload (including `options`, `previewUrl`, and `exportedFiles`) when the shopper added the item to the cart, you already have everything you need — no API call required.
 
-However, if you only stored the `personalizationGUID`, you can retrieve the full personalization details at any time via the Customily API. Even if you stored nothing at all, you can still retrieve the personalization details by order ID — as long as you included your e-commerce platform's order ID in the [`/standalone/cart` POST](CUSTOM_ADD_TO_CART.md#step-3-create-the-cart-record-on-customily-server).
+However, if you only stored the `personalizationGUID`, you can retrieve the full personalization details at any time via the Customily API. Even if you stored nothing at all, you can still retrieve the personalization details by order ID — as long as you included your e-commerce platform's order ID in the [`/standalone/cart`](CUSTOM_ADD_TO_CART.md#step-3-create-the-cart-record-on-customily-server) call.
 
 ## Retrieving Personalization Details
 
