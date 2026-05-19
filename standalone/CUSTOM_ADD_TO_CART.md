@@ -4,7 +4,7 @@ This guide explains how to use your own "Add to Cart" button instead of Customil
 
 ## Overview
 
-When using Customily's built-in "Add to Cart" button, the iframe automatically calls three operations and sends the result to the parent page via `postMessage`. If you want to use your own button, you need to call these same operations yourself using JavaScript functions exposed by the Customily engraver.
+When using Customily's built-in "Add to Cart" button, the iframe automatically calls three operations and sends the result to the parent page via `postMessage`. If you want to use your own button, you'll need to hide  Customily's one and call these same operations yourself using JavaScript functions exposed by the Customily engraver window object.
 
 The three operations are:
 
