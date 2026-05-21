@@ -22,7 +22,7 @@ This approach is ideal when you want to:
 2. You load the `customilyPreviewHost.js` script — this loads the Customily engraver and creates the canvas
 3. You add an iframe with the Customily personalization link in `mode=options-only`
 4. The iframe sends engraver commands to the parent page via `postMessage`
-5. The `canvasHost.js` script executes those commands on the local engraver, updating the preview
+5. The `customilyPreviewHost.js` script executes those commands on the local engraver, updating the preview
 
 ## Implementation
 
