@@ -19,7 +19,7 @@ This approach is ideal when you want to:
 ## How It Works
 
 1. You add a `<div>` on your page where the live preview canvas will render
-2. You load the `canvasHost.js` script — this loads the Customily engraver and creates the canvas
+2. You load the `customilyPreviewHost.js` script — this loads the Customily engraver and creates the canvas
 3. You add an iframe with the Customily personalization link in `mode=options-only`
 4. The iframe sends engraver commands to the parent page via `postMessage`
 5. The `canvasHost.js` script executes those commands on the local engraver, updating the preview
@@ -40,7 +40,7 @@ This approach is ideal when you want to:
 </iframe>
 ```
 
-The `mode=options-only` parameter tells Customily to render only the option set form without the live preview canvas.
+Note the `&mode=options-only` appended at the end of the iframe `src` URL — this is what tells Customily to render only the option set form without the live preview canvas. Without it, the iframe would load the full experience (canvas + form) as usual.
 
 ### Step 2: Configure and Load the Canvas Host
 
@@ -57,10 +57,10 @@ The `mode=options-only` parameter tells Customily to render only the option set 
 </script>
 
 <!-- Load the canvas host script -->
-<script src="https://cdn.customily.com/standalone/canvasHost.js"></script>
+<script src="https://preview-2.customily.com/static/js/customilyPreviewHost.js"></script>
 ```
 
-The `canvasHost.js` script:
+The `customilyPreviewHost.js` script:
 1. Loads the Customily engraver (`customily.js`)
 2. Creates a canvas element inside your container div
 3. Listens for `postMessage` commands from the options iframe
@@ -77,49 +77,47 @@ The `canvasHost.js` script:
 
 ## Complete Example
 
+This example places the canvas and options iframe side by side (see [`testOptionsOnly.html`](../product-preview/testOptionsOnly.html) for a working version you can open locally):
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Product Page — Options-Only Mode</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options-Only Mode Test</title>
     <style>
-        .product-layout {
+        body { font-family: sans-serif; margin: 20px; }
+        .container {
             display: flex;
-            gap: 32px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 24px;
+            gap: 20px;
+            align-items: flex-start;
         }
+        .panel { display: flex; flex-direction: column; }
         #customily-canvas {
-            flex: 1;
-            max-width: 600px;
-            aspect-ratio: 1;
-        }
-        .options-panel {
-            flex: 1;
-            max-width: 500px;
+            width: 500px;
+            height: 500px;
+            border: 1px solid #ccc;
         }
         #customily-options {
-            width: 100%;
+            width: 500px;
             height: 600px;
-            border: none;
+            border: 1px solid #ccc;
         }
     </style>
 </head>
 <body>
-
-    <h1>Personalized Heart Map Canvas</h1>
-
-    <div class="product-layout">
-        <!-- Live preview renders here, on your page -->
-        <div id="customily-canvas"></div>
-
-        <!-- Option set form in an iframe -->
-        <div class="options-panel">
+    <div class="container">
+        <div class="panel">
+            <h2>Canvas (parent page)</h2>
+            <div id="customily-canvas"></div>
+        </div>
+        <div class="panel">
+            <h2>Options (iframe)</h2>
             <iframe
                 id="customily-options"
-                src="https://preview-2.customily.com/productViewer?template=0313370a-e3d1-4b88-8640-f1027a78235d&set=53b7ddcc-880d-4303-a495-0338e1388ca2&shop=standalone.customily.com&mode=options-only">
-            </iframe>
+                src="https://preview-2.customily.com/productViewer?template=0313370a-e3d1-4b88-8640-f1027a78235d&set=53b7ddcc-880d-4303-a495-0338e1388ca2&shop=standalone.customily.com&mode=options-only"
+            ></iframe>
         </div>
     </div>
 
@@ -127,12 +125,13 @@ The `canvasHost.js` script:
         window.customilyCanvasHost = {
             canvasContainerId: 'customily-canvas',
             iframeSelector: '#customily-options',
-            onReady: () => {
-                console.log('Customily canvas ready');
+            engraverUrl: 'https://app.customily.com/customily.js',
+            onReady: function() {
+                console.log('Canvas host is ready!');
             }
         };
     </script>
-    <script src="https://cdn.customily.com/standalone/canvasHost.js"></script>
+    <script src="https://preview-2.customily.com/static/js/customilyPreviewHost.js"></script>
 
     <script>
         // Listen for personalization data (same as the standard iframe integration)
@@ -144,7 +143,6 @@ The `canvasHost.js` script:
             // Add to your platform's cart here...
         });
     </script>
-
 </body>
 </html>
 ```
