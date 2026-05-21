@@ -72,7 +72,7 @@ The `customilyPreviewHost.js` script:
 | ------ | ---- | -------- | ----------- |
 | `canvasContainerId` | string | Yes | ID of the HTML element where the canvas will be created |
 | `iframeSelector` | string | Yes | CSS selector for the options-only iframe |
-| `engraverUrl` | string | No | Override the URL for `customily.js` (defaults to the Customily CDN) |
+| `engraverUrl` | string | No | Override the URL for `customily.js` (defaults to the Customily CDN). Useful if you want to self-host `customily.js` on your own server or CDN to reduce loading times. |
 | `onReady` | function | No | Callback fired when the engraver is initialized and ready |
 
 ## Complete Example
