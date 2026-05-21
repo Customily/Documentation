@@ -4,10 +4,6 @@ Customily is a product personalization platform that lets shoppers customize pro
 
 This repository contains integration guides and API references for developers building on top of Customily.
 
-## Design Studio API
-
-- [Swagger Documentation](https://app.customily.com/swagger/index.html?url=/swagger/v1/swagger.json) — Interactive API reference for the Design Studio backend
-
 ## Standalone Integration
 
 Guides for integrating Customily into any e-commerce platform using an iframe-based approach. The iframe hosts the full personalization experience (live preview + option set form) or just the form in options-only mode.
@@ -22,3 +18,7 @@ Guides for integrating Customily into any e-commerce platform using an iframe-ba
 `customily.js` is the browser library that powers the live preview canvas. It exposes a global `engraver` object with methods to set text, fonts, colors, images, vectors, and more. Use these docs when building a fully custom integration that drives the preview programmatically.
 
 - [customily.js Reference](customily/README.md) — Full API reference for `customily.js`: initialization, text, images, vectors, export, and all available options
+
+## Design Studio API
+
+- [Swagger Documentation](https://app.customily.com/swagger/index.html?url=/swagger/v1/swagger.json) — Interactive API reference for the Design Studio backend
