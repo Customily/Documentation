@@ -1,12 +1,8 @@
 # Customily Developer Documentation
 
-Customily is a product personalization platform that lets shoppers customize products in real time — text, fonts, colors, images, vectors, and more — with a live preview rendered on an HTML canvas. It integrates with e-commerce platforms via an iframe-based modal or by embedding the preview canvas directly on the product page.
+Customily is a product personalization platform that lets shoppers customize products in real time — text, fonts, colors, images, vectors, and more — with a live preview rendered on an HTML canvas. It integrates with e-commerce platforms.
 
 This repository contains integration guides and API references for developers building on top of Customily.
-
-## Authentication
-
-- [API Authentication](https://app.customily.com/swagger/index.html?url=/swagger/v1/swagger.json#/Authentication/GetToken) — How to obtain and use JWT tokens for Customily API endpoints
 
 ## Design Studio API
 
