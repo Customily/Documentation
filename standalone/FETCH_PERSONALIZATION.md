@@ -74,4 +74,4 @@ curl -X GET "https://sh.customily.com/api/standalone/item?orderId=12345" \
 
 ## Authentication
 
-These endpoints require a JWT token in the `Authorization` header. See [Authentication](../AUTHENTICATION.md) for how to obtain one.
+These endpoints require a JWT token in the `Authorization` header. See [Authentication](https://app.customily.com/swagger/index.html?url=/swagger/v1/swagger.json#/Authentication/GetToken) for how to obtain one.

@@ -6,7 +6,7 @@ This repository contains integration guides and API references for developers bu
 
 ## Authentication
 
-- [API Authentication](AUTHENTICATION.md) — How to obtain and use JWT tokens for Customily API endpoints
+- [API Authentication](https://app.customily.com/swagger/index.html?url=/swagger/v1/swagger.json#/Authentication/GetToken) — How to obtain and use JWT tokens for Customily API endpoints
 
 ## Design Studio API
 

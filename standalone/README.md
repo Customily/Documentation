@@ -127,7 +127,7 @@ Authorization: Bearer <JWT_TOKEN>
 
 > Note: The `url` must be hosted on a `*.customily.com` domain.
 
-See [Authentication](../AUTHENTICATION.md) for how to obtain the JWT token.
+See [Authentication](https://app.customily.com/swagger/index.html?url=/swagger/v1/swagger.json#/Authentication/GetToken) for how to obtain the JWT token.
 
 ## 3. Complete Example
 
