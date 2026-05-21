@@ -10,7 +10,7 @@ This repository contains integration guides and API references for developers bu
 
 ## Design Studio API
 
-- [Swagger Documentation](https://app.customily.com/swagger/index.html?url=/swagger/v1/swagger.json) — Interactive API reference for the Design Studio backend. Requires being logged in to the Design Studio to use
+- [Swagger Documentation](https://app.customily.com/swagger/index.html?url=/swagger/v1/swagger.json) — Interactive API reference for the Design Studio backend
 
 ## Standalone Integration
 
