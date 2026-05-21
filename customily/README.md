@@ -95,7 +95,7 @@ engraver.setFont(1, 2);       // Sets the 2nd font option on text element 1
 engraver.setImageColor(3, 1); // Sets the 1st color option on image element 3
 ```
 
-For a full explanation of how positions work with element options and libraries, see [Position Parameter](docs/position-parameter.md).
+For a full explanation of how positions work with element options and libraries, see [Position Parameter](position-parameter.md).
 
 ### Text
 
@@ -125,7 +125,7 @@ await engraver.setFont(1, 2); // Apply the 2nd font option
 | Parameter      | Type              | Description                                    |
 |----------------|-------------------|------------------------------------------------|
 | `id`           | `String\|Number`  | [Design Studio ID](https://help.customily.com/articles/9397457321-what-s-the-elements-id) of the text element(s)        |
-| `fontPosition` | `Number`          | [Position](docs/position-parameter.md) of the font from the element's font options |
+| `fontPosition` | `Number`          | [Position](position-parameter.md) of the font from the element's font options |
 
 Returns `0` on success, `-1` if no matching elements found.
 
@@ -140,7 +140,7 @@ await engraver.setFontColor(1, 0); // Apply the 1st color option
 | Parameter           | Type              | Description                                      |
 |---------------------|-------------------|--------------------------------------------------|
 | `id`                | `String\|Number`  | [Design Studio ID](https://help.customily.com/articles/9397457321-what-s-the-elements-id) of the text element(s)          |
-| `fontColorPosition` | `Number`          | [Position](docs/position-parameter.md) of the color from the element's color options |
+| `fontColorPosition` | `Number`          | [Position](position-parameter.md) of the color from the element's color options |
 
 Returns `0` on success, `-1` if no matching elements found.
 
@@ -181,7 +181,7 @@ await engraver.setPresetImage(3, 2); // Apply the 2nd preset image
 | Parameter       | Type              | Description                                           |
 |-----------------|-------------------|-------------------------------------------------------|
 | `placeholderId` | `String\|Number`  | [Design Studio ID](https://help.customily.com/articles/9397457321-what-s-the-elements-id) of the image placeholder             |
-| `imagePosition` | `Number`          | [Position](docs/position-parameter.md) of the image from the placeholder's presets     |
+| `imagePosition` | `Number`          | [Position](position-parameter.md) of the image from the placeholder's presets     |
 
 #### `setImageColor(imageId, colorPosition)`
 
@@ -246,7 +246,7 @@ await engraver.setWordCloud(1, "love family friends happiness");
 |-----------------|----------|------------------------------------------------|
 | `id`            | `Number` | [Design Studio ID](https://help.customily.com/articles/9397457321-what-s-the-elements-id) of the image placeholder      |
 | `text`          | `String` | Words to use in the word cloud                 |
-| `shapePosition` | `Number` | Optional. [Position](docs/position-parameter.md) of the shape to use            |
+| `shapePosition` | `Number` | Optional. [Position](position-parameter.md) of the shape to use            |
 
 #### `setWordSearchPuzzle(id, words)` → `Promise<{base64, seed}>`
 
