@@ -8,6 +8,10 @@ This repository contains integration guides and API references for developers bu
 
 - [API Authentication](AUTHENTICATION.md) — How to obtain and use JWT tokens for Customily API endpoints
 
+## Design Studio API
+
+- [Swagger Documentation](https://app.customily.com/swagger/index.html?url=/swagger/v1/swagger.json) — Interactive API reference for the Design Studio backend. Requires being logged in to the Design Studio to use
+
 ## Standalone Integration
 
 Guides for integrating Customily into any e-commerce platform using an iframe-based approach. The iframe hosts the full personalization experience (live preview + option set form) or just the form in options-only mode.
