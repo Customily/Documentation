@@ -77,7 +77,7 @@ The `customilyPreviewHost.js` script:
 
 ## Complete Example
 
-This example places the canvas and options iframe side by side (see [`testOptionsOnly.html`](../product-preview/testOptionsOnly.html) for a working version you can open locally):
+This example places the canvas and options iframe side by side:
 
 ```html
 <!DOCTYPE html>
@@ -149,5 +149,3 @@ This example places the canvas and options iframe side by side (see [`testOption
 ## Add to Cart
 
 The add-to-cart flow works the same as in the standard iframe integration — the iframe sends a `postMessage` with the personalization data when the shopper clicks "Add to Cart". See [Capturing the Personalization Data](INTEGRATION_GUIDE.md#22-capturing-the-personalization-data) for details.
-
-If you want to use your own "Add to Cart" button, see [Custom Add to Cart Integration](CUSTOM_ADD_TO_CART.md). Note that in options-only mode, the engraver methods (`generatePFRPostOrder`, `generatePreviewImage`, etc.) are available on `window.engraver` on the parent page (not inside the iframe), since the canvas host loads the engraver locally.
