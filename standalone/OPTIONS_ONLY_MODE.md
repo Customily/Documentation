@@ -125,7 +125,6 @@ This example places the canvas and options iframe side by side (see [`testOption
         window.customilyCanvasHost = {
             canvasContainerId: 'customily-canvas',
             iframeSelector: '#customily-options',
-            engraverUrl: 'https://app.customily.com/customily.js',
             onReady: function() {
                 console.log('Canvas host is ready!');
             }
