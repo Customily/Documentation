@@ -28,9 +28,9 @@ When the shopper clicks "Add to Cart", Customily sends the personalization detai
 
 ## 2. Implementation Details
 
-### 2.1 The Customily Personalization Link
+### 2.1 The Customily Personalization URL
 
-The Customily personalization link is used as the `src` of the iframe. It has the following format:
+The Customily personalization URL is used as the `src` of the iframe. It has the following format:
 
 ```
 https://preview-2.customily.com/productViewer?template={TEMPLATE_ID}&set={OPTION_SET_ID}&shop={STORE_URL}
@@ -52,7 +52,7 @@ https://preview-2.customily.com/productViewer?template=0313370a-e3d1-4b88-8640-f
 
 You can create this URL in the Customily dashboard as shown [here](https://help.customily.com/articles/7995314835-connecting-your-templates-with-an-option-set-generating-the-personalization-url)
 
-> **Pro tip:** Add a "Customily Link" field to your admin product details page. This is the way to connect a product from your e-commerce platform to a personalization link on Customily — non-technical team members can simply copy-paste the link from the Customily dashboard without touching code.
+> **Pro tip:** Add a "Customily URL" field to your admin product details page. This is the way to connect a product from your e-commerce platform to a personalization URL on Customily — non-technical team members can simply copy-paste the URL from the Customily dashboard without touching code.
 
 ### 2.2 Capturing the Personalization Data
 
@@ -207,12 +207,12 @@ See [Authentication](https://app.customily.com/swagger/index.html?url=/swagger/v
 
     <script>
         // --- Configuration ---
-        // Paste the Customily personalization link for this product
-        const CUSTOMILY_LINK = 'https://preview-2.customily.com/productViewer?template=0313370a-e3d1-4b88-8640-f1027a78235d&set=53b7ddcc-880d-4303-a495-0338e1388ca2&shop=standalone.customily.com';
+        // Paste the Customily personalization URL for this product
+        const CUSTOMILY_URL = 'https://preview-2.customily.com/productViewer?template=0313370a-e3d1-4b88-8640-f1027a78235d&set=53b7ddcc-880d-4303-a495-0338e1388ca2&shop=standalone.customily.com';
 
         // Open modal on click
         document.getElementById('customize-btn').addEventListener('click', () => {
-            document.getElementById('customily-iframe').src = CUSTOMILY_LINK;
+            document.getElementById('customily-iframe').src = CUSTOMILY_URL;
             document.getElementById('customily-modal').classList.add('active');
         });
 
