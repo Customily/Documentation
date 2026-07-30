@@ -17,7 +17,7 @@ Guides for integrating Customily into any e-commerce platform using an iframe-ba
 
 `customily.js` is the browser library that powers the live preview canvas. It exposes a global `engraver` object with methods to set text, fonts, colors, images, vectors, and more. Use these docs when building a fully custom integration that drives the preview programmatically.
 
-- [customily.js Reference](customily/README.md) — Full API reference for `customily.js`: initialization, text, images, vectors, export, and all available options
+- [customily.js Reference](JavaScript%20Canvas%20Library/README.md) — Full API reference for `customily.js`: initialization, text, images, vectors, export, and all available options
 
 ## Design Studio API
 
