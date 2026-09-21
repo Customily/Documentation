@@ -8,10 +8,10 @@ This repository contains integration guides and API references for developers bu
 
 Guides for integrating Customily into any e-commerce platform using an iframe-based approach. The iframe hosts the full personalization experience (live preview + option set form) or just the form in options-only mode.
 
-- [Integration Guide](standalone/README.md) — End-to-end guide for embedding Customily in a modal iframe, from the "Customize" button to the cart
-- [Custom Add to Cart](standalone/CUSTOM_ADD_TO_CART.md) — How to replace Customily's built-in "Add to Cart" button with your own, including production file generation and cart record creation
-- [Retrieving Personalization Details & Production Files](standalone/FETCH_PERSONALIZATION.md) — How to fetch personalization data and production file URLs using the `personalizationGUID` or order ID
-- [Options-Only Mode](standalone/OPTIONS_ONLY_MODE.md) — How to embed the live preview canvas directly on your page while running the option set form in a lightweight iframe
+- [Integration Guide](Standalone%20Integration) — End-to-end guide for embedding Customily in a modal iframe, from the "Customize" button to the cart
+- [Custom Add to Cart](Standalone%20Integration/CUSTOM_ADD_TO_CART.md) — How to replace Customily's built-in "Add to Cart" button with your own, including production file generation and cart record creation
+- [Retrieving Personalization Details & Production Files](Standalone%20Integration/FETCH_PERSONALIZATION.md) — How to fetch personalization data and production file URLs using the `personalizationGUID` or order ID
+- [Options-Only Mode](Standalone%20Integration/OPTIONS_ONLY_MODE.md) — How to embed the live preview canvas directly on your page while running the option set form in a lightweight iframe
 
 ## customily.js
 
