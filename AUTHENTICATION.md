@@ -1,6 +1,33 @@
 # Customily API Authentication
 
-Several Customily API endpoints require a JWT token for authentication. This guide explains how to obtain one.
+Several Customily API endpoints require authentication. There are two ways to authenticate:
+
+- **API key**: send your account's API key in a header. Recommended for integrations, since no password is shared.
+- **JWT token**: exchange your username and password for a token.
+
+## Using an API Key
+
+Find your API key in Customily under **Account → Integrations** ([how to generate an API key](https://help.customily.com/articles/8574175414-how-to-generate-an-api-key)).
+
+Include it in the `x-api-key` header of your API requests. No call to `/api/token` is needed:
+
+```
+x-api-key: YOUR_API_KEY
+```
+
+**Example using cURL:**
+
+```bash
+curl "https://app.customily.com/api/Product/GetProductsCount" \
+  -H "Accept: application/json" \
+  -H "x-api-key: YOUR_API_KEY"
+```
+
+Notes:
+
+- The API key acts as the account owner, so keep it private.
+- Regenerating the key in **Account → Integrations** revokes the previous one immediately.
+- Template (`/api/Product/...`) and image upload endpoints accept an API key. Team management endpoints (`/api/Team`) require a JWT token.
 
 ## Obtaining a JWT Token
 
