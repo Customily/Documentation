@@ -48,7 +48,7 @@ curl -X GET "https://sh.customily.com/api/standalone/item/a1b2c3d4-e5f6-7890-abc
 | `quantity` | number | Number of items |
 | `productId` | string | The Customily template ID |
 | `previewUrl` | string | CDN URL of the personalized preview image |
-| `productionUrl` | string | Production file URL (available after calling [item/generate](INTEGRATION_GUIDE.md#23-generating-the-production-file)) |
+| `productionUrl` | string | Production file URL (available after calling [item/generate](README.md#23-generating-the-production-file)) |
 | `optionsJson` | string | JSON string with the shopper's selections |
 | `exportedFiles` | array | Array of production file URLs (one per template side) |
 | `createdDate` | string | When the cart record was created |

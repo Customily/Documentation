@@ -194,7 +194,7 @@ See [Authentication](https://app.customily.com/swagger/index.html?url=/swagger/v
     <!-- Product Page -->
     <h1>Personalized Heart Map Canvas</h1>
     <p>Celebrate a special place with a custom heart-shaped map canvas. Choose your location, add your names and a meaningful date — the perfect gift for anniversaries, weddings, or any occasion worth remembering.</p>
-    <img src="https://raw.githubusercontent.com/Customily/Documentation/main/standalone/images/product-image.png" id="product-image" style="display: block; margin-bottom: 16px;" />
+    <img src="https://raw.githubusercontent.com/Customily/Documentation/main/Standalone%20Integration/images/product-image.png" id="product-image" style="display: block; margin-bottom: 16px;" />
     <button id="customize-btn">Customize</button>
 
     <!-- Customily Modal -->
