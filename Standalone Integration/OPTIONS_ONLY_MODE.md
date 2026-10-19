@@ -4,7 +4,7 @@ This guide explains how to embed the Customily live preview canvas directly into
 
 ## Overview
 
-In the [standard iframe integration](INTEGRATION_GUIDE.md), the entire Customily experience (live preview + option set form) runs inside a single iframe. In options-only mode, you split these two parts:
+In the [standard iframe integration](README.md), the entire Customily experience (live preview + option set form) runs inside a single iframe. In options-only mode, you split these two parts:
 
 - **The live preview canvas** runs on your product page, outside the iframe
 - **The option set form** runs inside a lightweight iframe
@@ -148,4 +148,4 @@ This example places the canvas and options iframe side by side:
 
 ## Add to Cart
 
-The add-to-cart flow works the same as in the standard iframe integration — the iframe sends a `postMessage` with the personalization data when the shopper clicks "Add to Cart". See [Capturing the Personalization Data](INTEGRATION_GUIDE.md#22-capturing-the-personalization-data) for details.
+The add-to-cart flow works the same as in the standard iframe integration — the iframe sends a `postMessage` with the personalization data when the shopper clicks "Add to Cart". See [Capturing the Personalization Data](README.md#22-capturing-the-personalization-data) for details.
